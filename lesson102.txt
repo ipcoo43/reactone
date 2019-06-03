@@ -1,0 +1,19 @@
+branch
+git branch <branch-name> # branch 만들기
+git branch # branch 전체 보기
+git checkout <brahcn-name> # 전환
+소스 수정 
+ git add --all
+ git commit -am 'message'
+git push origin <branch-name>
+git log
+다른 동료 폴더> git clone <git-remote-url>
+또는
+다른 동료 폴더> git pull
+# 여기서 branch 내용까지 받아지면 성공
+# branch를 작업하는 쪽 외에는 소스 안보임
+
+origin master
+remote origin master
+branch
+mergy

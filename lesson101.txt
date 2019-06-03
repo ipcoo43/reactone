@@ -1,0 +1,22 @@
+로컬 저장소 만들기(initialize local repository)
+cd <work-dir>
+git init
+ .gitignore 파일 작성
+git add --all
+ git add <file명> 또는 git add .
+git commit -am 'first commit message'
+ -am : add와 message
+git remote add origin <git-remote-url : Download - Use Https 클릭>
+git remote add origin git@github.com:ipcoo43/reactone.git
+ fatal: remote origin already exists. 에러 발생
+ git remote rm origin
+
+git push -u origin master
+git push -fu origin master
+git log
+git status
+
+GitHub RemoteUrl 패턴
+https://github.com/<사용자이름>/<저장소명>.git
+
+alias ll='ls -al'

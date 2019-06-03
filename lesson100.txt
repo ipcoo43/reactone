@@ -1,0 +1,30 @@
+Git Config
+- 바탕화면 git bash 실행
+  git config --list
+- git config user.name
+  git config --global user.name ipcoo43
+- git config user.email
+  git config --global user.email ipcoo43@gmail.com
+- git config 한눈에 보기
+  cat ~/.gitconfig
+  git config --list | grep 'user.name'
+  git config --list | grep 'user.email'
+
+Git Server(Remote) Repository (like GitHub)
+  pull |    push |
+Git Local Repository (pc)
+  commit |
+staging
+  add    |
+Working Directory
+
+- Download Git Clinet
+ https://git-scm.com/downloads
+
+- SCM Service Site
+ - GitHub : public 가능 무료
+ - BitBucket : public/private 가능 무료
+ - 기타 : GitLab, Codebase, ColudForge
+
+- windows에서 GitHub 한글 깨질 때
+ cmd > chcp 65001
