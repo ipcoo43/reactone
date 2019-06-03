@@ -30,4 +30,10 @@ git download
  git clone git_address
 git update
  git status
-
+ git diff test.txt
+ git add .
+ get commit -m 'test.txt'
+ git remote -v
+ git branch
+ git push origin master
+ 
