@@ -39,4 +39,8 @@ git update
 git pull origin master
  git branch
 git push origin master
+ git status
+ git add .
+ git commit -m 'test.txt'
+git push origin master
  
