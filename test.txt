@@ -32,7 +32,7 @@ git update
  git status
  git diff test.txt
  git add .
- get commit -m 'test.txt'
+ git commit -m 'test.txt'
  git remote -v
  git branch
  git push origin master
@@ -43,6 +43,8 @@ git push origin master
  git add .
  git commit -m 'test.txt'
 git push origin master
- 
+
+error: failed to push some refs to 발생하면
 git pull origin master
 git push origin master
+ 
