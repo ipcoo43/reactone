@@ -44,3 +44,5 @@ git push origin master
  git commit -m 'test.txt'
 git push origin master
  
+git pull origin master
+git push origin master
