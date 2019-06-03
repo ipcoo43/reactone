@@ -36,4 +36,7 @@ git update
  git remote -v
  git branch
  git push origin master
+git pull origin master
+ git branch
+git push origin master
  
