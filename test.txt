@@ -37,3 +37,5 @@ git update
  git branch
  git push origin master
  
+git pull origin master
+git push origin master
