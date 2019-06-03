@@ -1,1 +1,33 @@
-Here is requirement
+working directory
+ mkdir project 
+ vi project_requirement
+  here is requirement
+ git init
+ git status
+Staging
+ git add project_requirement
+ git status
+local repository
+ git commit -m 'project_requirement v1'
+working directory delete
+ rm project_requirement
+ git status
+working directory Revive
+ git checkout -- 
+ git checkout test.txt 
+project_requirement
+remote repository
+ git remote
+github.com/ipcoo43
+ New repository : project
+ git_address copy
+working directory
+ git remote add origin git_address_copy
+ git remote
+ git branch
+ git push orign master
+git download
+ git clone git_address
+git update
+ git status
+
