@@ -1,0 +1,50 @@
+master에도 a.py가 있고, branch에도 a.py가 있을 때
+master에도 a.py, b.py가 있는데, branch에도 a.py있고 b.py가 없을 때
+
+< master로 merge 하기 (작업폴더에서) >
+git checkout master   # master로 변경
+git merge <branch-name>
+bit branch
+git log --graph --onelien
+
+< conflict (non fast-forward) >
+git status
+
+< branch 삭제 >
+local> git branch -d <branch-name>
+local> git branch
+remote> git push --delete origin <branch-name>
+
+[ branch (cont'd) ]
+< conflict scenario >
+Me(testbrunch) | Others(master)
+a.py 수정      | a.py 수정
+               |
+merge to master | commit & push
+commit & push & push to master
+conflict
+소스 수정 & commit & push
+commit & push   | pull & 끝
+
+< local repository >
+merge 하기전에 받을 branch(수신처)에서 pull을 한다 
+br_one에서 br_two로 pull 하기
+git checkout br_two  # br_two로 가서
+git merge br_one     # br_one를 pull 한다
+
+< remote repository >
+git push origin br_two
+git branch     # loclal repository
+git branch -r  # remote repository
+
+< 삭제 할 때도 >
+git branch -d br_two              # local
+git push --delete origin br_two   # remote
+
+< branch 보기 >
+local branch   > git branch
+remote branch  > git branch -r
+local + remote > git branch -a
+
+< remote 특징 branch 가져오기 >
+git checkout -t origin/<branch-name>

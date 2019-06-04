@@ -1,0 +1,23 @@
+< branch >
+git branch <branch-name> # branch 만들기
+git branch # branch 전체 보기
+git checkout <branch-name> # 전환
+소스 수정
+ git add --all
+ git commit -am "first"
+ git push origin <branch-name>
+git log --graph --oneline
+다른동료폴더> git clone <git-remote-url>
+다른동료폴더> git pull
+
+
+master (Main)
+ branch_one (sub_one)
+ branch_two (sub_two)
+ branch_three (sub_three)
+작업을 마치면
+branch 소스들을 master로 옮긴후 branch 삭제
+
+master에서 branch로 이동 할 때 : git checkout
+branch가 없을 때 : git push
+branch가 있을 때 : git push origin
