@@ -44,7 +44,6 @@ remote branch  > git branch -r
 local + remote > git branch -a
 
 < remote 특징 branch 가져오기 >
-<<<<<<< HEAD
 git checkout -t origin/<branch-name>
 
 [ branch 실습 ]
@@ -52,6 +51,5 @@ git checkout -t origin/<branch-name>
 git branch br1
 git branch
 git checkout br1
-=======
+
 git checkout -t origin/<branch-name>
->>>>>>> br1
