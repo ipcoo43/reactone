@@ -1,0 +1,68 @@
+- branch : 독립적으로 어떤 작업을 진행하기 위한 개념
+- merge : 독립적으로 만들어진 작업을 하나로 모음 
+< 여러 명이서 독립적으로 동시에 작업 >
+ - 먼저 메인 브랜치에서 자신의 작업 전용 브래치 생성
+ - 각자 작업 진행
+ - 작업이 끝나면 메인 브랜치에 자신의 브래치의 변경사항 적용
+< master branch >
+ - 저장소를 처음 만들때 master branch 생성
+ - 파일 추가나 변경한 내용은 commit하는 것은 master branch 처리
+ - master가 아닌 또 새로운 branch를 만들어서
+ - 이제 부터는 branch_one을 사용할거야 선언 : checkout
+
+< 통합 브랜치(Integration Branch)>
+ - 언제든지 배포 할 수 있는 버전을 만들 수 있다.
+ - 늘 안정적인 상태 유지
+ - 안정적인 상태란 현재 작업 중인 소스코드가 어플리케이션으로 개발 가능
+ - 그 어플리케이션이 정상적으로 동작하는 상태
+ - 일반적으로 master branch가 처음 생성되어 사용하는 것
+
+< 토픽 브랜치 (Topic Branch) >
+ - 기능 추가나 버그 수정과 같은 단위 작업을 위한 브랜치
+ - 여러 작업하는 만큼 브랜치 생성
+ - 토픽 브랜치에서 특정 작업이 완료되면 다시 통합 브랜치에 병합하는 방식
+ - 통합된 브랜치를 피처 브랜치(Feature branch)라고 한다.
+
+< 브랜치 전환하기 >
+ - Git에서 작업할때 브랜치를 미리 선택해야 한다.
+ - Git 설치 하면 master branch가 선태 된다.
+ - 다른 branch로 가고자 할 때는 checkout 한다
+ - checkout 하면 브랜치안에 있는 마지막 commit 내용이 작업 트리에 펼쳐진다.
+ - 브랜치가 전환되었으므로 이 후 실행 commit은 전환한 브랜치에 추가 된다.
+
+< HEAD >
+ - 현재 사용 중인 브랜치의 선두 부분을 나타내는 이름
+ - 기본적으로 master의 선두 부분을 나타냅니다
+ - checkout 으로 이동하면
+ - 사용하는 브랜치가 변경됩니다.
+
+< stash >
+ - commit하지 않은 변경 내용이나 새롭게 추가한 파일이 인덱스와 작업 트리에 남아 있다.
+ - checkout하면 그 변경 내용은 기존 브랜치가 아닌 전환된 브래치에서 commit 할 수 있다.
+ - 단, commit 가능한 변경 내용 중에 checkout branch에서도 한 차례 변경이 되어 있는 경우
+ - checkout 실패 할 수 있다. 이런 경우에는
+ - 이전 브랜치에서 commit하지 않은 변경 내용을 commit하거나
+ - stash를 이용해 일시적으로 변경 내용을 다른 곳에 저장하여 출동을 피하게 한다.
+ - stash 란 파일의 변경 내용을 일시적으로 기록해두는 영역
+ - 이 stash에 저장된 변경 내용은 나중에 다시 불러와 원래의 브랜치나 다른 브랜치에 commit할 수 있다.
+
+< 브랜치 통합 >
+ - 작업 완료된 토픽 브랜치는 최종적으로 통합 브랜치에 병합된다.
+ < merge >
+  - merge를 사용하면, 여러 개의 브랜치 하나로 통합
+  < master_branch 와 one_branch 가정 >
+   - one_branch 를 master_branch 로 merge
+   - master_branch 상태가 이전부터 변경되지 않았으면 쉽게 merge 된다.
+   - one_branch의 이력은 master_branch의 이력을 모두 포함하고 있다.
+   - master_branch는 단순히 이동하기만 해도 ond_branch의 내용을 적용 할 수 있다.
+   - 이같은 병합은 빨리 감기 병합(fast-froward merge) 라고 부른다.
+   - 하지만
+   - one_branch를 분기한 이후에 master_branch에 여러 가지 변경 사항이 적용되는 경우
+   - 양쪽의 변경을 가져온 병합 커밋(merge commit)을 실행하게 된다.
+   - 병합이 완료되면 통합 브랜친인 master_branch로 통합된 이력이 생긴다.
+ < rebase >
+  < master_branch에서 분기한 one_branch 있다고 가정 >
+   - non fast-forward merge 방식으로 진행된가고 가정
+   - one_branch를 master_branch에 rebase하면 
+   - one_branch의 이력이 master_branch 뒤로 이동하게 된다.
+  

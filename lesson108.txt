@@ -1,0 +1,105 @@
+[ 시작하기 ]
+ - Git 소스코드를 효과적으로 관리하기 위한 분산형 버전 관리 시스템
+ - 특정 시점에 저장된 버전과 비교하거나 되돌아갈 수 있다.
+ - 내가 올리려는 파일과 누군가 편집한 내용과 충돌하면 경고 메시지 발생한다.
+ - 편집한 내용을 덮어써버리는 실수가 없다.
+
+[ 이력 관리 저장소 ]
+ - Git Repository 란 파일이나 폴더 저장해 두는 곳
+ - 파일이 변경 이력 별로 구분되어 저장된다.
+ < Remote repository >
+  - 원격 저장소 전용 서버에서 관리되면 여러 사람이 함께 공유하기 위한 저장소
+ < local repository >
+  - 내 pc에 파일이 저장되는 개인 전용 저장소
+ - 내 pc의 local Reposotory에서 작업하다가 작업한 내용을 공개하고 싶을 때
+ - Remote Repository에서 다른 사람이 작업한 파일을 로컬 저장소로 가져올수도 있다.
+
+[ 저장소 만들기 ]
+ < local repository create >
+  - 새로 만들기
+  - 이어 만들어져 있는 원격 저장소를 로컬 저장소로 복사 해 올 수 있다.
+
+[ 변경을 기록하는 commit ]
+ - 파일 및 폴더의 추가/변경 사항을 저장소에 기록하려면 commit 해야 한다.
+ - commit을 하면 이전 commit로부터 현재 상태까지의 변경 이력이 기록된(revision)이 생성된다.
+ - commit은 시간순으로 저장된다.
+ - commit -am "message"
+
+[ Work tree와 Index ]
+ - commit 하기전 repository 와 work tree 사이에 존재하는 공간을 Index라고 한다.
+ - Work tree -> Index(stage) -> Commit - Repository
+ - Repository에 변경 사항을 기록하기 위해서는 기록하고자하는 모든 변경 사항들이
+ - Index(stage)에 존재 해야 한다.
+
+[ Git Config ]
+ - git config --list
+ - git config --global user.name ipcoo43
+ - git config --global user.mail ipcoo43@gamil.com
+
+[ local repository ]
+ - mkdir myproject
+ - cd myproject
+ - git init
+
+[ commit ]
+ - notepad sample.txt
+   git 연습을 시작합니다.
+ - git add --all
+ - git commit -am "sample create"
+
+[ remote repository 연결 ]
+ - git remote
+ - git remote add origin https://github.com/ipcoo43/reactone.git
+ - git remote -v
+ - git clone https://github.com/ipcoo43/reactone.git reactone
+ - git pull
+
+[ remote repository에 push하기 ]
+ - remote repository로 업로드하는 것을 Push라고 한다.
+ - remote repository로 변경 이력이 업로드되어
+ - local repostitory로 remote repository가 동일한 상태가 괸다.
+
+[ remote repository clone 하기 ]
+ - remote repository 복제하려면 clone하면 된다.
+ - 복제란 remote repository를 통째로 다운로드 하는 것이다.
+ - 복제한 저장소를 다른 pc에서 local repository로 사용
+ - remote repository롸 똑같은 이력을 참조하고 commit을 진행할수 있다.
+
+[ remote repository에서 pull해오기 ]
+ - remote repository를 여러 사람이 함께 작업을 하면
+ - 모두가 같은 remote repository에 push 한다
+ - 다른 사람이 원격 저장소에 올려놓은 변경 내용을 내 로컬 저장소에도 적용(pull)
+
+[ 변경 이력 병합(merge) 하기 ]
+ - 내가 pull한 저장소가 최신 버젼이 아닌 경우
+ - 내가 pull을 실행한 후 다른 사람이 push을 하여 
+ - remote repository를 업데이트 해버린 경우
+ - push 요청이 거부되어 버린다.
+ - 이련 경우 병합(merge)이라는 작업을 진행하여 다른 사람의 업데이트 이력을
+ - 내 저장소에도 갱신 해야 한다.
+
+[ 충돌 해결하기 ]
+ - remote repository 와 local repository 양쪽에서 파일의 동일한 부분을 변경한 경우
+ - 충돌 현상 발생하면 충돌 발생한 곳을 수정 한 후에 다시 commit 수행하면 된다.
+
+git merge branch_name
+git add .
+git commit
+git checkout branch_name
+git commit -a
+git merge master
+git status
+충돌 유발되곳 수정
+git add .
+git commit
+git log --graph --decorate -- oneline
+
+
+git fetch --all
+git reset --hard origin/master
+git pull origin master
+
+git checkout master
+git fetch
+git diff origin/master
+git rebase origin master
