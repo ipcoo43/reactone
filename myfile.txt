@@ -1,13 +1,1 @@
-< 동시에 여러 작업하기 >
-git 명령어
-
-
-1. master에 파일 생성
- editplus myfile.txt
-  git 명령어
- git add myfile.txt
- git commit -am "myfile.txt create"
-
-git branch one_branch
-git branch two_branch
-git checkout one_branch
+Git 명령어
