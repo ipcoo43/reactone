@@ -1,0 +1,48 @@
+Reset & Revert ( Git Log & Reset )
+GitBash Command
+ git log --graph --oneline
+ git reset --[hard | soft | mixed]
+ # hard는 모든 것을 되돌림
+ git revert  # history 쌓임, 소스 그대로
+
+GitHub ( Click Revision or Comment msg )
+ Repository Home
+ Source code View
+ Split > Let's Attach Comment
+
+GitLens ( Visual Studio code )
+ Install VSCode GitLens Extension
+ History (Revisions)
+ Branches
+ OLD | New
+
+Working directory
+ git add --all
+staging area
+ git commit
+locall repository
+ git push & git pull
+remote repository
+
+[ Reset & Revert 실습 ]
+a.py 추가
+ git add --all
+ git status
+ git commit -am "Create"
+ git push
+a.py first 수정
+ git commit -am "First"
+ git push
+a.py Second 수정
+ git commit -am "Second"
+ git push
+ git push origin +master
+
+reset : revision만 되돌림
+ git reset 7daefad
+ git commit -am "rollback third"
+revert : revision 남아있음
+
+
+eb8d2f9
+
