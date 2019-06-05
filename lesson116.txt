@@ -1,0 +1,31 @@
+[ 소수 Prime number ]
+- 자기 자신과 1로밖에 안 나누어지는 숫자
+
+a=17 
+a_prime = True      # a_prime변수의 초기값을 참으로 정의 합니다
+for i in rang(2,a): # 2부터 자기자신 -1까지의 수에 대해서
+  if a % i == 0:    # a를 i로 나눈 나머지가 0 이면
+    a_prime = False # a_prime을 거짓으로 바꾼다
+
+if a_prime == True: # a_prime이 True와 같으면
+  print('소수이다') # 이를 출력하고
+else:               # a_prime이 False이면
+  print('소수가 아니다') # 이를 출력한다.
+# '소수이다' 출력
+
+def is_prime(a):
+  b=range(2,a)  # 2부터 a-1까지의 리스트
+  c=0
+  for i in a:     # a의 원소 i에 대하여
+    if a % i == 0 # a를 i로 나눈 나머지가 0이면
+	  c += 1
+  if c > 0:
+    print('소수가 아니다')
+	d = False
+  else:
+    print('소수이다.')
+	d = True
+  return d
+
+is_prime(31)  # 소수이다.
+is_prime(18)  # 소수 아니다.
