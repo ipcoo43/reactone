@@ -1,0 +1,75 @@
+[ 합집합, 교집합, 차집합 class 만들기 ]
+
+class Sets():    # 집합의 연산을 Sets라는 이름의 class로 정의
+  def setdata(self,a,b)  # method는 입력값으로 항상 self를 맨 앞에 써 줘야 한다.
+    self.a = a   # a를 class의 객체 변수로 만든다
+	self.b = b   # b를 class의 객체 변수로 만든다
+  
+  def union(self):  # 합집합을 구하는 method
+    result = self.b + []  # result에 self.b를 복사하고
+	for i in self.a:      # self.a의 원소 i에 대해서
+	  if i not in self.b: # i가 self.b가 없으면
+	    result.append(i)  # result에 i를 추가하라
+	result.sort()
+	return result
+
+  def intersection(self): # 교집합을 구하는 method
+    result = []           # result에 공집합을 만들고
+	for i in self.a:      # self.a의 원소 i에 대해서
+      if i in self.b:     # i가 self.b에 있으면
+	    result.append(i)  # result에 i를 추가하라
+	result.sort()
+	return result
+
+  def complemnet(self)   # 차집합을 구하는 method
+    result = self.a + [] # result에 self.a를 복사하고
+	for i in self.b:     # self.a의 원소 i에 대해서
+	  if i in self.a:    # i가 self.a에 있으면
+	    result.remove(i) # result에 i를 제거하라
+	result.sort()
+	return result
+
+a = [1,3,4,5,6]
+b = [2,4,6,3,0]
+
+c = Sets()     # c를 Sets이라는 class의 객체로 정의한다.
+c.setdata(a,b) # c라는 객체가 연산할때 필요한 data인 a,b라는 입력값을 넣어서
+               # setdata란 method가 a,b를 객체변수로 생성된다
+			   # 생성된 객체변수 a,b는 합집합,교집합,차집합의 method가 계산 할 때 사용된다.
+# c의 객체변수 c.a, c.b를 출력 한다
+print(c.a, c.b)         # [1, 3, 4, 5, 6] [2, 4, 6, 3, 0]
+print(c.union())        # [0, 1, 2, 3, 4, 5, 6]
+print(c.intersection()) # [3, 4, 6]
+print(c.complement())   # [1, 5]
+
+a=['apple','banana','melon','mango','tomato']
+b=['watermelon','strawberry','orange','apple','banana']
+
+d=Sets()        # d를 Sets이라는 class의 객체로 정의
+d.setdata(a,b)  # d라는 객체게 연산할때 필요한 data인 a,b라는 입력값을 넣는다
+print(d.a, d.b) # ['apple', 'banana', 'melon', 'mango', 'tomato'] 
+                # ['watermelon', 'strawberry', 'orange', 'apple', 'banana']
+print(d.union()) # ['apple', 'banana', 'mango', 'melon', 'orange', 'strawberry', 'tomato', 'watermelon']
+print(d.intersection()) # ['apple', 'banana']
+print(d.complement()) # ['mango', 'melon', 'tomato']
+
+[ 롤 플레잉 속의 도둑 캐릭터를 class로 만들기 ]
+class 도둑():
+  def 베기(self):
+    칼을 휘뒤른다
+
+  def 돈줍기(self):
+    돈을 줍는다.
+ 
+  def 장비목록(self):
+    착용한 장비 목록을 보여준다.
+
+  def 장비착용(self):
+    self.sword=sword2
+    self.shield=shield3
+
+김똑똑 = 도둑()   # 김똑똑을 가진 도둑 캐릭터 생성
+김똑똑.베기()     # 한번 칼을 휘두르는 액션
+김똑똑.장비착용() # 검은 sword2를 착용하며, 방패는 shield3라는 방패를 착용하게 된다.
+또한
+왕신나 = 도둑():  # 왕신나라는 새로운 캐릭터 생성

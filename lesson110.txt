@@ -1,0 +1,24 @@
+[ for 반복문 ]
+for 변수 in list(또는 다른 여러 원소들을 갖는 자료형):
+  수행할 문장들
+
+list=[0,1,2,3,4]
+for i in list: # list에 있는 원소를 i라 하고 
+  print(i)     # 매번 i를 출력시켜라
+
+b=0            # b의 초기값을 0으로 설정하고
+for i in list: # list에 있는 원소를 i라 하고
+  b=b+i        # 매번 i를 b에 더하라
+print('list 요소들의 합 : ',b) # 그러면 b는 10이 될 것이다
+
+b=0 # b의 초기값을 0으로 설정하고
+for i in list: # list에 있는 원소를 i라 하고
+  b += i # 매번 i를 b에 더하라
+print('list 요소들의 합 : ',b) # 그러면 b는 10이 될 것이다.
+
+b +=1 # b에 1을 더한값을 새로운 b에 입력하라
+
+b=[] # b를 빈 리스트로 설정하고
+for i in list:    # 리스트에 있는 원소를 i라하고
+  list.append(i)  # 매번 빈 list에 각각의 원소를 추가하라
+print(b)          # 그러면 b 리스트에 list원소들이 추가되어 있을 것이다.

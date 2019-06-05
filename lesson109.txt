@@ -1,0 +1,91 @@
+[ list ]
+- list는 자료형들을 원소로 가진 집합
+- list도 list안에 원소가 될 수 있다.
+- 리스트와 집합의 차이
+  - 집합은 중복 원소 가질수 없다. 순서가 없다
+  - 리스트는 중복 원소 가질 수 있다. 순서가 있다
+
+a=[] # 공집합
+b=[1,2,3] # 정수형 자료형
+c=['Coding','is','Python'] # 문자형 자료형
+d=[1,2,'math','Coding'] # 숫자형, 문자형이 섞인 자료형
+e=[1,2,['math','coding']] # 리스트안에 리스트
+type(a,b,c,d,e) # list
+
+[ list 원소 갯수 : len() ]
+len(a) # 0
+len(b) # 3 
+
+[ list안에 특정 원소 갯수 : list.count(특정 원소) ]
+f=[2,4,6,3,6,3,7,3,2,7,3,7]
+f.count(3)  # 4
+
+[ list의 indexing ]
+- list에 n개의 원소 : start(이상) end(미만) end(n-1)
+c = ['Coding', 'is', 'not', 'difficult']
+        0       1      2        3
+c[0]  # Coding
+c[2]  # not
+c[-1] # difficult
+e = [1, 2, ['Math', 'Coding']]
+     0  1   2[0]     2[1]
+e[2][1] # Coding
+
+[ list의 slice ]
+a=[1,2,3,4,5,6,7,8,9]
+   0 1 2 3 4 5 6 7 8
+a[0:5]  # 1,2,3,4,5
+a[3:]   # 4,5,6,7,8,9
+a[:]    # 1,2,3,4,5,6,7,8,9
+e[2[:]] # 'Math', 'Coding'
+
+[ list의 연산 : +, *]
+a=[3,5]
+b=[4,7]
+a+b  # 3,5,4,6
+a*2  # 3,5,3,5
+
+[ list의 원소 수정하기 ]
+- 원소 바꾸기
+a=[1,3,5,8,9]
+a[3]=7
+a # 1,3,4,7,9
+- 원소 삭제
+del a[3]   # list의 index를 이용해 삭제
+a # 1,3,5,9
+a=[1,2,3]
+a.remove(3) # 원소 자체를 삭제 
+a # 1,2
+a=[1,2,3,1,2,3]
+a.remove(3) # 처음 3만 삭제
+a # 1,2,1,2,3
+- 원소 추가
+a.append(4)
+a # 1,2,1,2,3,4
+a=[1,2]
+a=a+[4]
+a # 1,2,4
+
+[ 자료형이 다르면 연산은 불가능하다 ]
+a=[1,2]
+a + 4 # list + int -> 에러 발생
+
+[ list 정렬 ]
+a=[1,5,4,3,9]
+a.sort() # 오름차순 정렬
+a # 1,3,4,5,9
+a.reverse() # 내림차순 정렬
+a # 9,5,4,3,1
+a = ['totamo', 'mango',  'watermellon', 'apple',]
+a.sort()
+a # 'apple', 'mango', 'totamo', 'watermellon'
+a.reverse()
+a # 'watermellon', 'totamo', 'mango', 'apple'
+
+[ list 원소의 index 구하기 ]
+a.index('mango') # 1
+
+[ list안의 원소 유무 판별 ]
+a=[3,1,6,4,9]
+1 in a   # True
+0 in a   # False
