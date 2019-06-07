@@ -1,0 +1,30 @@
+소수 (Prime Number)
+- 자기 자신과 1로밖에 안 나누어지는 숫자
+- 2,3,5,7
+- 17이 소수인지 판별 방법
+- 17 / 2,3,4~16까지 나누어지는지 확인
+- 나머지가 0인지 여부 판별
+
+a=17
+a_prime = True  # 초기값을 True
+for i in range(2,a):  # 2부터 a-1까지의 수에대해
+  if a % i == 0:      # a를 i로 나눈 나머지가 0이면
+    a_prime = False   # a_prime은 거짓의 의미인 False로 바꾸어라
+if a_prime == True:
+  print('소수이다.')
+else:
+  print('소수가 아니다.')
+
+def is_prime(a):
+  b = range(2,a)
+  c = 0
+  for i in b:
+    if a % i == 0:
+	  c += 1
+  if c > 0 :
+    print('소수가 아니다.')
+	d = False
+  else:
+    print('소수이다.')
+	d = True
+  return d

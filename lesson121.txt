@@ -1,0 +1,23 @@
+range(start, stop, step)
+range(i,j) : i,i+1,i+2,...,j-1
+produces 생산
+exactly 정확히
+valid 유효한
+indices 색인
+increment/decrement 증가/감소
+specify 지정하다
+prime / composite : 1과 자기자신밖에 안 나눠지는 수
+자기자산을 2부터 자기자신-1로 나눠 나머지가 0인지 판별
+a=17
+b=range(2,a) 
+c=True
+for i in b:
+  if a % i == 0:
+    c = False
+if c == True:
+  print('prime')
+else:
+  print('no prime')
+
+%  : 나눈 나머지
+// : 나눈 몫
