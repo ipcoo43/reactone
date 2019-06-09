@@ -1,0 +1,7 @@
+a,c=10,0
+while a>0: a가 0보다 클때까지
+c += a: c에다가 a를 더하고
+a -= 1: a에는가 1를 뺀다
+[i for i in x의 범위 if i에 대한 조건문]
+list(filter(lambda i:i에 대한 조건문, x의 범위)))
+for, if를 통한 반복문
